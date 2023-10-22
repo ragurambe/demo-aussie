@@ -6,9 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.demo.ui.Utilities.WindowsUserInfo;
-import com.demo.ui.Utilities.WindowsUserInfoService;
-
 /**
  * @author raguram.maniyarasu
  *
@@ -26,7 +23,6 @@ public class HomeController {
 	@GetMapping("/user")
 	public String addNewEmployee(
 			@RequestParam(value = "username", defaultValue = "John", required = true) String username, Model model) {
-//    	WindowsUserInfo userInfo = WindowsUserInfoService.getLoggedInUserDetails();
 		model.addAttribute("username", System.getProperty("user.name") + System.getProperty("os.name"));
 		return "user";
 	}
